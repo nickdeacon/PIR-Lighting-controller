@@ -1,7 +1,7 @@
 # PIR-Lighting-controller
-Sonoff CH4 Pro2 firmware to create a security lighting system
-This is a firmware update for the Sonoff 4CH Pro device to create a PIR based security light system. It has two main additions to the basic unit, allowing up to 4 RF devices to be registered against each of the four output relay channels, and includes an ADC input for light levels, so that switching only occurs at a light level below the pre-set level.
-It is intended for use with the Sonoff PIR units, as well as the Sonoff keyfob, and allows each channel to be switched from a variety of sources.
-This software will allow the unit to function as a security lighting system without relying on a connection to the eWeLink or other internet based home automation system. That said, individual lighting zones can be triggered via these also.
-This firmware runs on the STM32f030C6T6 chip, and you will need a means of programming the chip using the SWDIO and SWCLK pins. I have found that the STM32F0308-DISCO development board is an ideal means to do this.
-I recommend that you also download the ST-LINK Utility which will allow you to backup the original firmware, and program the unit back to its original state if required.
+Firmware for the Sonoff CH4 Pro2 to create a security lighting system using the Sonoff 433MHz PIR and keyfob.
+This is a firmware update for the STM32f030 chip in the Sonoff 4CH Pro device, to create a PIR based security light system. It has two main additions to the basic unit, allowing up to 4 RF devices to be registered against each of the four output relay channels, and includes an ADC input for light levels using a simple Light Dependent Resistor LDR, so that switching only occurs at a light level below the pre-set level.
+It removes the need for a an internet connection or a separate local device for the necessary rule processing that would normally be required for the night-time switching of lights in response to PIR signals. It is still possible however to remotely activate the relays in the same way as it is with the standard device.
+It is intended for use with the Sonoff PIR units, as well as the Sonoff keyfob, and allows each channel to be switched from a variety of sources. So a combination of up to 4 PIR devices and keyfobs can switch a single relay zone, and the same PIR can switch more than one relay zone.
+This firmware runs on the STM32f030C6T6 chip, and you therefore requires a means of programming the chip using serial programming via the SWDIO and SWCLK pins. A development board such as the STM32F0308-DISCO is an ideal means to do this, as it allows external programming and debugging.
+Please see the documentation included as a guide to the simple modifications required.
